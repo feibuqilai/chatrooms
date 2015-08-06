@@ -46,9 +46,7 @@ function serverStatic(response,cache,absPath){
 
 //创建http服务器
 
-
-
-//逻辑
+//1.逻辑
 var server = http.createServer(function(request,response) {
 	var filePath = falae;
 
@@ -64,9 +62,13 @@ var server = http.createServer(function(request,response) {
 
 
 
-//启动
+//2.启动
 server.listen(3000,function() {
 	console.log("server listening on port 3000");
 });
 
-//
+
+
+//设置Socket.IO服务器
+var chatServer = require('./lib/chat_server');
+chatServer.listen(server);
