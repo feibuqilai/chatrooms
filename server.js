@@ -48,7 +48,7 @@ function serverStatic(response,cache,absPath){
 
 //1.逻辑
 var server = http.createServer(function(request,response) {
-	var filePath = falae;
+	var filePath = false;
 
 	if (request.url == '/') {
 		filePath = 'public/index.html';

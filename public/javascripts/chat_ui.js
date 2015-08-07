@@ -10,7 +10,7 @@ function processUserInput(chatApp, socket) {
 	var message = $('#send-message').val();
 	var systemMessage;
 
-	if (message.chatAt(0) == '/') {
+	if (message.charAt(0) == '/') {
 		systemMessage = chatApp.processCommand(message);
 		if (systemMessage) {
 			$('#messages').append(divSystemContentElement(systemMessage));
@@ -18,7 +18,7 @@ function processUserInput(chatApp, socket) {
 	} else {
 		chatApp.sendMessage($('#room').text().message);
 		$('#messages').append(divEscapedContentElement(message));
-		$('#messages').scrollTop($('#message').prop('scrollHeight'));
+		$('#messages').scrollTop($('#messages').prop('scrollHeight'));
 	}
 
 	$('#send-message').val('');
@@ -73,7 +73,7 @@ $(document).ready(function() {
 	$('#send-message').focus();
 
 	$('#send-form').submit(function() {
-		processUserInput(chatApp, socket);
+		processUserInput(chatApp,socket);
 		return false;
 	});
 });
